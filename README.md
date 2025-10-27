@@ -102,12 +102,19 @@ To simplify the process, let’s break it into **four main steps**:
 **Given:** Image points { x₁, x₂, x₃ } and focal length *f*
 **Find:** Angles between projection rays { α, β, γ }
 
-<div>![Image Formation in Pinhole Camera Model](media/pinhole_model.png)</div>
+<p align="center">
+  <img src="media/pinhole_model.png" alt="Pinhole Model" width="80%">
+  <br>
+  <em>Figure 2: Image formation in Pin Hole camera model.</em>
+</p>
 
-Assume everything is defined in the **camera coordinate system**,
-with the camera at **(0, 0, 0)** facing the +Z axis.
+Assume everything is defined in the **camera coordinate system**, with the camera at **(0, 0, 0)** facing the +Z axis.
 
-<div>![Coordinates in the Image Plane](media/image_plane_coords.png)</div>
+<p align="center">
+  <img src="media/image_plane_coords.png" alt="Image Plane Coords" width="80%">
+  <br>
+  <em>Figure 3: Coordinates in the Image Plane.</em>
+</p>
 
 
 Here,
@@ -120,8 +127,7 @@ $$
 \therefore \vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f)
 \]
 
-Similarly, we can find $\vec{x}_2$ and $\vec{x}_3$ as well.  
-Now, the angle between any two vectors can be calculated as:
+Similarly, we can find $\vec{x}_2$ and $\vec{x}_3$ as well. Now, the angle between any two vectors can be calculated as:
 
 $$
 \alpha = \arccos\!\left(\frac{\vec{x}_2 \cdot \vec{x}_3}{|\vec{x}_2|\,|\vec{x}_3|}\right)
@@ -142,12 +148,15 @@ $$
 **Given:** Angles { α, β, γ } and 3D points { X₁, X₂, X₃ }
 **Find:** Lengths { s₁, s₂, s₃ }
 
-<div>![Tetrahedron Geometry](media/tetrahedron_geometry.png)</div>
+<p align="center">
+  <img src="media/tetrahedron_geometry.png" alt="Tetrahedron Geometry" width="80%">
+  <br>
+  <em>Figure 5: Tetrahedron Geometry.</em>
+</p>
 
 This step deals with the **geometry of tetrahedron X₀–X₁–X₂–X₃**.
 
-First, find relative distances between the 3D points { a, b, c },
-using simple Euclidean distance.
+First, find relative distances between the 3D points { a, b, c }, using simple Euclidean distance.
 
 $$
 a = \lVert \mathbf{X}_3 - \mathbf{X}_2 \rVert
@@ -284,6 +293,11 @@ Hence, we get **four sets of (u,v)** values — only one of which is correct.
 ### 3️⃣ Identify the Correct Solution
 
 <div>![Four Possible Solutions](media/four_possible_solutions.png)</div>
+<p align="center">
+  <img src="media/four_possible_solutions.png" alt="Four Possible Solutions" width="80%">
+  <br>
+  <em>Figure 6: Four Possible Solutions.</em>
+</p>
 
 Geometrically, it’s possible to get **four different sets** of { s₁, s₂, s₃ }
 for the same angles { α, β, γ } and relative distances { a, b, c }.
