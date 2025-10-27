@@ -1,2 +1,2 @@
-# PnP-Tutorial
-This repository is all about PnP Tutorial.
+# PnP Tutorial
+A detailed discussion on PnP.
