@@ -5,6 +5,10 @@ A detailed discussion on PnP.
 ## Resources
 - 2004
   - [Multiple View Geometry in Computer Vision — Richard Hartley & Andrew Zisserman](https://www.r-5.org/files/books/computers/algo-list/image-processing/vision/Richard_Hartley_Andrew_Zisserman-Multiple_View_Geometry_in_Computer_Vision-EN.pdf)
+  - [Presentation](https://www.youtube.com/watch?v=N1aCvzFll6Q) and [slides](https://www.ipb.uni-bonn.de/html/teaching/photo12-2021/2021-pho1-23-p3p.pptx.pdf) by **Prof. Cyrill Stachniss**
+  - [Blog post by Jingnan Shi](https://jingnanshi.com/blog/pnp_minimal.html)
+  - [Lecture by Prof. Steven LaValle](https://www.youtube.com/watch?v=0JGC5hZYCVE)
+  - [PnP Tutorial by Rashik Shrestha](https://medium.com/@rashik.shrestha/perspective-n-point-pnp-f2c7dd4ef1ed)
 
 ## Introduction
 
@@ -49,7 +53,7 @@ Here, the 3D points **X₁, X₂, X₃** correspond to 2D image points **x₁, x
 
 Finding these correspondences seems intuitive for humans, but it’s a **big challenge for computers**.
 
-> 👉 *Click here to try an interactive version of this figure*
+> 👉 *[Click here to try an interactive version of this figure](https://rashik.info.np/pnp_in_svg/)*
 
 ---
 
@@ -331,14 +335,5 @@ This is a classic **3D registration** (or point-cloud alignment) problem, also k
 This post explains one of the earliest variants of the **PnP algorithms**, originally proposed by **Grunert in 1841**.
 
 Centuries later, we have much faster and more robust solutions (e.g., OpenCV’s `solvePnP`, PyPose implementations). Still, understanding the **original geometric formulation**
-helps you apply and debug modern methods more effectively.
-
----
-
-## 📚 References
-
-* [Multiple View Geometry in Computer Vision — Richard Hartley & Andrew Zisserman](https://www.r-5.org/files/books/computers/algo-list/image-processing/vision/Richard_Hartley_Andrew_Zisserman-Multiple_View_Geometry_in_Computer_Vision-EN.pdf)
-* [Presentation](https://www.youtube.com/watch?v=N1aCvzFll6Q) and [slides](https://www.ipb.uni-bonn.de/html/teaching/photo12-2021/2021-pho1-23-p3p.pptx.pdf) by **Prof. Cyrill Stachniss**
-* [Blog post by Jingnan Shi](https://jingnanshi.com/blog/pnp_minimal.html)
-* [Lecture by Prof. Steven LaValle](https://www.youtube.com/watch?v=0JGC5hZYCVE)
+helps you apply and debug modern methods more effectively
 
