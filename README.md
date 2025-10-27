@@ -5,9 +5,11 @@ A detailed discussion on PnP.
 ## Resources
 - 2004
   - [Multiple View Geometry in Computer Vision — Richard Hartley & Andrew Zisserman](https://www.r-5.org/files/books/computers/algo-list/image-processing/vision/Richard_Hartley_Andrew_Zisserman-Multiple_View_Geometry_in_Computer_Vision-EN.pdf)
+- 2020
   - [Presentation](https://www.youtube.com/watch?v=N1aCvzFll6Q) and [slides](https://www.ipb.uni-bonn.de/html/teaching/photo12-2021/2021-pho1-23-p3p.pptx.pdf) by **Prof. Cyrill Stachniss**
   - [Blog post by Jingnan Shi](https://jingnanshi.com/blog/pnp_minimal.html)
   - [Lecture by Prof. Steven LaValle](https://www.youtube.com/watch?v=0JGC5hZYCVE)
+- 2023
   - [PnP Tutorial by Rashik Shrestha](https://medium.com/@rashik.shrestha/perspective-n-point-pnp-f2c7dd4ef1ed)
 
 ## Introduction
