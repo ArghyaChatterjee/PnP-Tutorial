@@ -33,7 +33,10 @@ given the **point correspondences** between the environment and the image.
 
 ---
 
-<div>![Point Correspondences between 3D Environment and Camera Image](media/pnp_correspondences.png)</div>
+<div>
+  <img src="media/pnp_correspondences.png" alt="Image 3" style="width:100%">
+        <figcaption>Point Correspondences between 3D Environment and Camera Image</figcaption>
+</div>
 
 The figure above shows how an image of a 3D environment is captured by a camera.
 Here, the 3D points **X₁, X₂, X₃** correspond to 2D image points **x₁, x₂, x₃**.
