@@ -55,7 +55,8 @@ Hence, **PnP → P3P** problem.
 ## Why Exactly 3 Points?
 
 This has something to do with **Degrees of Freedom**,
-which is well explained in the linked video in the original article.
+which is well explained in this Video:
+https://www.youtube.com/watch?v=0JGC5hZYCVE
 
 ---
 
@@ -78,8 +79,6 @@ Let’s discuss the case of **P3P** and properly define the problem.
 > We assume an *ideal pinhole camera* (no lens distortion)
 > and the **principal point** is exactly at the image center.
 
-If you’re unfamiliar with these concepts, see the author’s upcoming post on *Single View Geometry*.
-
 ---
 
 ## 🔢 Solution Steps
@@ -90,7 +89,6 @@ To simplify the process, let’s break it into **four main steps**:
 2. Compute lengths of projection rays
 3. Identify the correct solution
 4. Compute the pose
-
 ---
 
 ### 1️⃣ Compute Angles Between Projection Rays
@@ -104,6 +102,32 @@ Assume everything is defined in the **camera coordinate system**,
 with the camera at **(0, 0, 0)** facing the +Z axis.
 
 <div>![Coordinates in the Image Plane](media/image_plane_coords.png)</div>
+
+
+Here,
+
+$$
+\vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f) - (0,0,0)
+$$
+
+\[
+\therefore \vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f)
+\]
+
+Similarly, we can find $\vec{x}_2$ and $\vec{x}_3$ as well.  
+Now, the angle between any two vectors can be calculated as:
+
+$$
+\alpha = \arccos\!\left(\frac{\vec{x}_2 \cdot \vec{x}_3}{|\vec{x}_2|\,|\vec{x}_3|}\right)
+$$
+
+$$
+\beta = \arccos\!\left(\frac{\vec{x}_3 \cdot \vec{x}_1}{|\vec{x}_3|\,|\vec{x}_1|}\right)
+$$
+
+$$
+\gamma = \arccos\!\left(\frac{\vec{x}_1 \cdot \vec{x}_2}{|\vec{x}_1|\,|\vec{x}_2|}\right)
+$$
 
 ---
 
@@ -119,17 +143,129 @@ This step deals with the **geometry of tetrahedron X₀–X₁–X₂–X₃**.
 First, find relative distances between the 3D points { a, b, c },
 using simple Euclidean distance.
 
-<div>![Relative Distances Between 3D Points](media/distances_between_points.png)</div>
+$$
+a = \lVert \mathbf{X}_3 - \mathbf{X}_2 \rVert
+$$
+
+$$
+b = \lVert \mathbf{X}_1 - \mathbf{X}_3 \rVert
+$$
+
+$$
+c = \lVert \mathbf{X}_2 - \mathbf{X}_1 \rVert
+$$
+
 
 To find { s₁, s₂, s₃ }, apply the **Law of Cosines**.
 
 For triangle X₀–X₁–X₂:
 
-<div>![Law of Cosines Equation Illustration](media/law_of_cosines.png)</div>
+$$
+s_1^2 + s_2^2 - 2 s_1 s_2 \cos{\gamma} = c^2
+$$
+
 
 Repeat the same for all three faces of the tetrahedron.
 
-<div>![Equations of All Faces](media/tetrahedron_equations.png)</div>
+$$
+\begin{aligned}
+a^2 &= s_2^2 + s_3^2 - 2 s_2 s_3 \cos{\gamma} \\
+b^2 &= s_3^2 + s_1^2 - 2 s_3 s_1 \cos{\alpha} \\
+c^2 &= s_1^2 + s_2^2 - 2 s_1 s_2 \cos{\beta}
+\end{aligned}
+$$
+
+For simplicity in calculation, we substitute \( u = \frac{s_2}{s_1} \) and \( v = \frac{s_3}{s_1} \).
+
+We get,
+
+$$
+s_1^2 = \frac{c^2}{1 + u^2 - 2u \cos{\gamma}} \tag{i}
+$$
+
+$$
+s_1^2 = \frac{b^2}{1 + v^2 - 2v \cos{\beta}} \tag{ii}
+$$
+
+$$
+s_1^2 = \frac{a^2}{u^2 + v^2 - 2uv \cos{\alpha}} \tag{iii}
+$$
+
+From equation (i) and (ii):
+
+$$
+u^2 - \frac{c^2}{b^2} v^2 - 2u \cos{\gamma} + 2 \frac{c^2}{b^2} v \cos{\beta} + \frac{b^2 - c^2}{b^2} = 0 \tag{iv}
+$$
+
+
+From equation (ii) and (iii):
+
+$$
+u^2 = -\frac{b^2 - a^2}{b^2} v^2 + 2uv \cos{\alpha} - \frac{2a^2}{b^2} v \cos{\beta} + \frac{a^2}{b^2} \tag{v}
+$$
+
+
+Substituting the value of \( u^2 \) from equation (v) into equation (iv):
+
+$$
+u = \frac{(-1 + \frac{a^2 - c^2}{b^2})v^2 - 2\left(\frac{a^2 - c^2}{b^2}\right)v \cos{\beta} + (1 + \frac{a^2 - c^2}{b^2})}
+{2(\cos{\gamma} - v \cos{\alpha})} \tag{vi}
+$$
+
+
+Here, we have completely isolated the term \(u\) from others,  
+which can be plugged back into equation (iv) to get:
+
+$$
+A_4 v^4 + A_3 v^3 + A_2 v^2 + A_1 v + A_0 = 0 \tag{vii}
+$$
+
+where,
+
+$$
+A_4 = 
+\left( \frac{a^2 - c^2}{b^2} - 1 \right)^2 
+- \frac{4 c^2}{b^2} \cos^2{\alpha}
+$$
+
+$$
+A_3 = 4 \left[
+\frac{a^2 - c^2}{b^2}
+\left( 1 - \frac{a^2 - c^2}{b^2} \right) \cos{\beta}
+- \left( 1 - \frac{a^2 + c^2}{b^2} \right) \cos{\alpha} \cos{\gamma}
++ 2 \frac{c^2}{b^2} \cos^2{\alpha} \cos{\beta}
+\right]
+$$
+
+$$
+\begin{aligned}
+A_2 = 2 \Bigg[
+&\left( \frac{a^2 - c^2}{b^2} \right)^2 
+- 1 + 2 \left( \frac{a^2 - c^2}{b^2} \right)^2 \cos^2{\beta}
++ 2 \left( \frac{b^2 - c^2}{b^2} \right) \cos^2{\alpha} \\
+&- 4 \left( \frac{a^2 + c^2}{b^2} \right)
+\cos{\alpha} \cos{\beta} \cos{\gamma}
++ 2 \left( \frac{b^2 - a^2}{b^2} \right) \cos^2{\gamma}
+\Bigg]
+\end{aligned}
+$$
+
+$$
+A_1 = 4 \left[
+-\left( \frac{a^2 - c^2}{b^2} \right)
+\left( 1 + \frac{a^2 - c^2}{b^2} \right) \cos{\beta}
++ \frac{2 a^2}{b^2} \cos^2{\gamma} \cos^2{\beta}
+- \left( 1 - \frac{a^2 + c^2}{b^2} \right)
+\cos{\alpha} \cos{\gamma}
+\right]
+$$
+
+$$
+A_0 = 
+\left( 1 + \frac{a^2 - c^2}{b^2} \right)^2
+- \frac{4 a^2}{b^2} \cos^2{\gamma}
+$$
+
 
 Equation (vii) yields a **fourth-degree polynomial**.
 Solving it gives **four possible values** for *v*,
