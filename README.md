@@ -151,7 +151,7 @@ $$
 <p align="center">
   <img src="media/tetrahedron_geometry.png" alt="Tetrahedron Geometry" width="80%">
   <br>
-  <em>Figure 5: Tetrahedron Geometry.</em>
+  <em>Figure 4: Tetrahedron Geometry.</em>
 </p>
 
 This step deals with the **geometry of tetrahedron X₀–X₁–X₂–X₃**.
@@ -228,8 +228,7 @@ u = \frac{(-1 + \frac{a^2 - c^2}{b^2})v^2 - 2\left(\frac{a^2 - c^2}{b^2}\right)v
 $$
 
 
-Here, we have completely isolated the term \(u\) from others,  
-which can be plugged back into equation (iv) to get:
+Here, we have completely isolated the term \(u\) from others which can be plugged back into equation (iv) to get:
 
 $$
 A_4 v^4 + A_3 v^3 + A_2 v^2 + A_1 v + A_0 = 0 \tag{vii}
@@ -282,35 +281,29 @@ A_0 =
 $$
 
 
-Equation (vii) yields a **fourth-degree polynomial**.
-Solving it gives **four possible values** for *v*,
-which can be substituted into equation (vi) to obtain *u*.
+Equation (vii) yields a **fourth-degree polynomial**. Solving it gives **four possible values** for *v* which can be substituted into equation (vi) to obtain *u*.
 
-Hence, we get **four sets of (u,v)** values — only one of which is correct.
+Hence, we get **four sets of (u,v)** values only one of which is correct.
 
 ---
 
 ### 3️⃣ Identify the Correct Solution
 
-<div>![Four Possible Solutions](media/four_possible_solutions.png)</div>
 <p align="center">
   <img src="media/four_possible_solutions.png" alt="Four Possible Solutions" width="80%">
   <br>
-  <em>Figure 6: Four Possible Solutions.</em>
+  <em>Figure 5: Four Possible Solutions.</em>
 </p>
 
-Geometrically, it’s possible to get **four different sets** of { s₁, s₂, s₃ }
-for the same angles { α, β, γ } and relative distances { a, b, c }.
+Geometrically, it’s possible to get **four different sets** of { s₁, s₂, s₃ } for the same angles { α, β, γ } and relative distances { a, b, c }.
 
 **Methods to choose the correct solution:**
 
-1. Use additional sensors like **GPS** or **IMU** to get an initial pose estimate
-   and select the solution nearest to it.
+1. Use additional sensors like **GPS** or **IMU** to get an initial pose estimate and select the solution nearest to it.
 2. Use **more correspondence points** — e.g., add a fourth pair (X₄, x₄).
 
    * Compute four camera poses using Step 4 below and check which aligns best with X₄.
-   * Alternatively, solve for { s₁, s₂, s₄ }, { s₂, s₃, s₄ }, { s₁, s₃, s₄ }
-     and find the set consistent with previous { s₁, s₂, s₃ } values.
+   * Alternatively, solve for { s₁, s₂, s₄ }, { s₂, s₃, s₄ }, { s₁, s₃, s₄ } and find the set consistent with previous { s₁, s₂, s₃ } values.
 
 ---
 
@@ -319,14 +312,10 @@ for the same angles { α, β, γ } and relative distances { a, b, c }.
 **Given:** Complete tetrahedron geometry
 **Find:** Camera pose — rotation matrix R<sub>c</sub> and translation vector t<sub>c</sub>
 
-<div>![Camera Pose Computation Diagram](media/pose_computation.png)</div>
-
-We already have { X₁, X₂, X₃ } in both **camera** and **world** coordinate systems.
-Now we need a **transformation from camera → world coordinates**,
+We already have { X₁, X₂, X₃ } in both **camera** and **world** coordinate systems. Now we need a **transformation from camera → world coordinates**,
 which lets us transform the camera position to obtain the final **camera pose**.
 
-This is a classic **3D registration** (or point-cloud alignment) problem,
-also known as *scan matching*.
+This is a classic **3D registration** (or point-cloud alignment) problem, also known as *scan matching*.
 
 > The author will cover this topic in a future post.
 > You can check related works referenced in the article for more ideas.
@@ -335,20 +324,17 @@ also known as *scan matching*.
 
 ## 💭 Final Thoughts
 
-This post explains one of the earliest variants of the **PnP algorithms**,
-originally proposed by **Grunert in 1841**.
+This post explains one of the earliest variants of the **PnP algorithms**, originally proposed by **Grunert in 1841**.
 
-Centuries later, we have much faster and more robust solutions
-(e.g., OpenCV’s `solvePnP`, PyPose implementations).
-Still, understanding the **original geometric formulation**
+Centuries later, we have much faster and more robust solutions (e.g., OpenCV’s `solvePnP`, PyPose implementations). Still, understanding the **original geometric formulation**
 helps you apply and debug modern methods more effectively.
 
 ---
 
 ## 📚 References
 
-* *Multiple View Geometry in Computer Vision* — Richard Hartley & Andrew Zisserman
-* Presentation and slides by **Prof. Cyrill Stachniss**
-* Blog post by **Jingnan Shi**
-* Lecture by **Prof. Steven LaValle**
+* [Multiple View Geometry in Computer Vision — Richard Hartley & Andrew Zisserman](https://www.r-5.org/files/books/computers/algo-list/image-processing/vision/Richard_Hartley_Andrew_Zisserman-Multiple_View_Geometry_in_Computer_Vision-EN.pdf)
+* [Presentation](https://www.youtube.com/watch?v=N1aCvzFll6Q) and [slides](https://www.ipb.uni-bonn.de/html/teaching/photo12-2021/2021-pho1-23-p3p.pptx.pdf) by **Prof. Cyrill Stachniss**
+* [Blog post by Jingnan Shi](https://jingnanshi.com/blog/pnp_minimal.html)
+* [Lecture by Prof. Steven LaValle](https://www.youtube.com/watch?v=0JGC5hZYCVE)
 
