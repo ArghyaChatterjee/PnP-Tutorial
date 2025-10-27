@@ -140,15 +140,15 @@ $$
 Similarly, we can find $\vec{x}_2$ and $\vec{x}_3$ as well. Now, the angle between any two vectors can be calculated as:
 
 $$
-\alpha = \arccos\!\left(\frac{\vec{x}_2 \cdot \vec{x}_3}{|\vec{x}_2|\,|\vec{x}_3|}\right)
+\alpha = \arccos\\left(\frac{\vec{x}_2 \cdot \vec{x}_3}{|\vec{x}_2|\\cdot|\vec{x}_3|}\right)
 $$
 
 $$
-\beta = \arccos\!\left(\frac{\vec{x}_3 \cdot \vec{x}_1}{|\vec{x}_3|\,|\vec{x}_1|}\right)
+\beta = \arccos\\left(\frac{\vec{x}_3 \cdot \vec{x}_1}{|\vec{x}_3|\\cdot|\vec{x}_1|}\right)
 $$
 
 $$
-\gamma = \arccos\!\left(\frac{\vec{x}_1 \cdot \vec{x}_2}{|\vec{x}_1|\,|\vec{x}_2|}\right)
+\gamma = \arccos\\left(\frac{\vec{x}_1 \cdot \vec{x}_2}{|\vec{x}_1|\\cdot|\vec{x}_2|}\right)
 $$
 
 ---
