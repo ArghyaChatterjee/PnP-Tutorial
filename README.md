@@ -132,10 +132,9 @@ Here,
 $$
 \vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f) - (0,0,0)
 $$
-
-\[
+$$
 \therefore \vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f)
-\]
+$$
 
 Similarly, we can find $\vec{x}_2$ and $\vec{x}_3$ as well. Now, the angle between any two vectors can be calculated as:
 
@@ -200,33 +199,33 @@ c^2 &= s_1^2 + s_2^2 - 2 s_1 s_2 \cos{\beta}
 \end{aligned}
 $$
 
-For simplicity in calculation, we substitute \( u = \frac{s_2}{s_1} \) and \( v = \frac{s_3}{s_1} \).
+For simplicity in calculation, we substitute $$\( u = \frac{s_2}{s_1} \)$$ and $$\( v = \frac{s_3}{s_1} \)$$.
 
 We get,
 
 $$
-s_1^2 = \frac{c^2}{1 + u^2 - 2u \cos{\gamma}} \tag{i}
+s_1^2 = \frac{c^2}{1 + u^2 - 2u \cos{\gamma}} ..............(i)
 $$
 
 $$
-s_1^2 = \frac{b^2}{1 + v^2 - 2v \cos{\beta}} \tag{ii}
+s_1^2 = \frac{b^2}{1 + v^2 - 2v \cos{\beta}} ..............(ii)
 $$
 
 $$
-s_1^2 = \frac{a^2}{u^2 + v^2 - 2uv \cos{\alpha}} \tag{iii}
+s_1^2 = \frac{a^2}{u^2 + v^2 - 2uv \cos{\alpha}} ..............(iii)
 $$
 
 From equation (i) and (ii):
 
 $$
-u^2 - \frac{c^2}{b^2} v^2 - 2u \cos{\gamma} + 2 \frac{c^2}{b^2} v \cos{\beta} + \frac{b^2 - c^2}{b^2} = 0 \tag{iv}
+u^2 - \frac{c^2}{b^2} v^2 - 2u \cos{\gamma} + 2 \frac{c^2}{b^2} v \cos{\beta} + \frac{b^2 - c^2}{b^2} = 0 ..............(iv)
 $$
 
 
 From equation (ii) and (iii):
 
 $$
-u^2 = -\frac{b^2 - a^2}{b^2} v^2 + 2uv \cos{\alpha} - \frac{2a^2}{b^2} v \cos{\beta} + \frac{a^2}{b^2} \tag{v}
+u^2 = -\frac{b^2 - a^2}{b^2} v^2 + 2uv \cos{\alpha} - \frac{2a^2}{b^2} v \cos{\beta} + \frac{a^2}{b^2} ..............(v)
 $$
 
 
@@ -234,60 +233,38 @@ Substituting the value of \( u^2 \) from equation (v) into equation (iv):
 
 $$
 u = \frac{(-1 + \frac{a^2 - c^2}{b^2})v^2 - 2\left(\frac{a^2 - c^2}{b^2}\right)v \cos{\beta} + (1 + \frac{a^2 - c^2}{b^2})}
-{2(\cos{\gamma} - v \cos{\alpha})} \tag{vi}
+{2(\cos{\gamma} - v \cos{\alpha})} ..............(vi)
 $$
 
 
 Here, we have completely isolated the term \(u\) from others which can be plugged back into equation (iv) to get:
 
 $$
-A_4 v^4 + A_3 v^3 + A_2 v^2 + A_1 v + A_0 = 0 \tag{vii}
+A_4 v^4 + A_3 v^3 + A_2 v^2 + A_1 v + A_0 = 0 ..............(vii)
 $$
 
 where,
 
 $$
-A_4 = 
-\left( \frac{a^2 - c^2}{b^2} - 1 \right)^2 
-- \frac{4 c^2}{b^2} \cos^2{\alpha}
+A_4 = \left(\frac{a^2 - c^2}{b^2} - 1 \right)^2 - \frac{4 c^2}{b^2} \cos^2{\alpha}
 $$
 
 $$
-A_3 = 4 \left[
-\frac{a^2 - c^2}{b^2}
-\left( 1 - \frac{a^2 - c^2}{b^2} \right) \cos{\beta}
-- \left( 1 - \frac{a^2 + c^2}{b^2} \right) \cos{\alpha} \cos{\gamma}
-+ 2 \frac{c^2}{b^2} \cos^2{\alpha} \cos{\beta}
-\right]
+A_3 = 4 \left[\frac{a^2 - c^2}{b^2} \left( 1 - \frac{a^2 - c^2}{b^2} \right) \cos{\beta} - \left( 1 - \frac{a^2 + c^2}{b^2} \right) \cos{\alpha} \cos{\gamma} + 2 \frac{c^2}{b^2} \cos^2{\alpha} \cos{\beta}\right]
 $$
 
 $$
 \begin{aligned}
-A_2 = 2 \Bigg[
-&\left( \frac{a^2 - c^2}{b^2} \right)^2 
-- 1 + 2 \left( \frac{a^2 - c^2}{b^2} \right)^2 \cos^2{\beta}
-+ 2 \left( \frac{b^2 - c^2}{b^2} \right) \cos^2{\alpha} \\
-&- 4 \left( \frac{a^2 + c^2}{b^2} \right)
-\cos{\alpha} \cos{\beta} \cos{\gamma}
-+ 2 \left( \frac{b^2 - a^2}{b^2} \right) \cos^2{\gamma}
-\Bigg]
+A_2 = 2 \Bigg[&\left( \frac{a^2 - c^2}{b^2} \right)^2 - 1 + 2 \left( \frac{a^2 - c^2}{b^2} \right)^2 \cos^2{\beta} + 2 \left( \frac{b^2 - c^2}{b^2} \right) \cos^2{\alpha} \\ &- 4 \left( \frac{a^2 + c^2}{b^2} \right)\cos{\alpha}\cos{\beta} \cos{\gamma} + 2 \left( \frac{b^2 - a^2}{b^2} \right) \cos^2{\gamma}\Bigg]
 \end{aligned}
 $$
 
 $$
-A_1 = 4 \left[
--\left( \frac{a^2 - c^2}{b^2} \right)
-\left( 1 + \frac{a^2 - c^2}{b^2} \right) \cos{\beta}
-+ \frac{2 a^2}{b^2} \cos^2{\gamma} \cos^2{\beta}
-- \left( 1 - \frac{a^2 + c^2}{b^2} \right)
-\cos{\alpha} \cos{\gamma}
-\right]
+A_1 = 4 \left[-\left( \frac{a^2 - c^2}{b^2} \right)\left( 1 + \frac{a^2 - c^2}{b^2} \right) \cos{\beta}+ \frac{2 a^2}{b^2} \cos^2{\gamma} \cos^2{\beta}- \left( 1 - \frac{a^2 + c^2}{b^2} \right)\cos{\alpha} \cos{\gamma}\right]
 $$
 
 $$
-A_0 = 
-\left( 1 + \frac{a^2 - c^2}{b^2} \right)^2
-- \frac{4 a^2}{b^2} \cos^2{\gamma}
+A_0 = \left( 1 + \frac{a^2 - c^2}{b^2} \right)^2- \frac{4 a^2}{b^2} \cos^2{\gamma}
 $$
 
 
