@@ -256,7 +256,7 @@ $$
 
 $$
 \begin{aligned}
-A_2 = 2 \Bigg[&\left( \frac{a^2 - c^2}{b^2} \right)^2 - 1 + 2 \left( \frac{a^2 - c^2}{b^2} \right)^2 \cos^2{\beta} + 2 \left( \frac{b^2 - c^2}{b^2} \right) \cos^2{\alpha} \\ - 4 \left( \frac{a^2 + c^2}{b^2} \right)\cos{\alpha}\cos{\beta} \cos{\gamma} + 2 \left( \frac{b^2 - a^2}{b^2} \right) \cos^2{\gamma}\Bigg]
+A_2 = 2 \Bigg[\left( \frac{a^2 - c^2}{b^2} \right)^2 - 1 + 2 \left( \frac{a^2 - c^2}{b^2} \right)^2 \cos^2{\beta} + 2 \left( \frac{b^2 - c^2}{b^2} \right) \cos^2{\alpha} \\ - 4 \left( \frac{a^2 + c^2}{b^2} \right)\cos{\alpha}\cos{\beta} \cos{\gamma} + 2 \left( \frac{b^2 - a^2}{b^2} \right) \cos^2{\gamma}\Bigg]
 \end{aligned}
 $$
 
