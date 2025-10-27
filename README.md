@@ -110,6 +110,7 @@ To simplify the process, let’s break it into **four main steps**:
 ### 1️⃣ Compute Angles Between Projection Rays
 
 **Given:** Image points { x₁, x₂, x₃ } and focal length *f*
+
 **Find:** Angles between projection rays { α, β, γ }
 
 <p align="center">
