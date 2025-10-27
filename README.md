@@ -33,10 +33,12 @@ given the **point correspondences** between the environment and the image.
 
 ---
 
-<div>
-  <img src="media/pnp_correspondences.png" alt="Image 3" style="width:100%">
-        <figcaption>Point Correspondences between 3D Environment and Camera Image</figcaption>
-</div>
+<p align="center">
+  <img src="media/pnp_correspondences.png" alt="Point Correspondences" width="80%">
+  <br>
+  <em>Figure 1: Point correspondences between 3D environment and camera image.</em>
+</p>
+
 
 The figure above shows how an image of a 3D environment is captured by a camera.
 Here, the 3D points **X₁, X₂, X₃** correspond to 2D image points **x₁, x₂, x₃**.
@@ -59,7 +61,8 @@ Hence, **PnP → P3P** problem.
 
 This has something to do with **Degrees of Freedom**,
 which is well explained in this Video:
-https://www.youtube.com/watch?v=0JGC5hZYCVE
+
+[![Watch the video](https://img.youtube.com/vi/0JGC5hZYCVE/maxresdefault.jpg)](https://www.youtube.com/watch?v=0JGC5hZYCVE)
 
 ---
 
