@@ -131,10 +131,10 @@ Assume everything is defined in the **camera coordinate system**, with the camer
 Here,
 
 $$
-\vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f) - (0,0,0)
+\vec{x}_1 = (u_1 - \tfrac{w}{2}, v_1 - \tfrac{h}{2}, f) - (0,0,0)
 $$
 $$
-\therefore \vec{x}_1 = (u_1 - \tfrac{w}{2},\, v_1 - \tfrac{h}{2},\, f)
+\therefore \vec{x}_1 = (u_1 - \tfrac{w}{2}, v_1 - \tfrac{h}{2}, f)
 $$
 
 Similarly, we can find $\vec{x}_2$ and $\vec{x}_3$ as well. Now, the angle between any two vectors can be calculated as:
